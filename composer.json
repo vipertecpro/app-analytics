@@ -10,6 +10,10 @@
         }
     ],
     "homepage": "https://github.com/vipertecpro/app-analytics",
+    "support": {
+        "issues": "https://github.com/vipertecpro/app-analytics/issues",
+        "source": "https://github.com/vipertecpro/app-analytics"
+    },
     "keywords": [
         "nativephp",
         "mobile",

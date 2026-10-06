@@ -1,0 +1,157 @@
+{
+    "name": "vipertecpro/app-analytics",
+    "version": "1.0.0",
+    "description": "App Analytics & Remote Config for NativePHP: log analytics events, user properties and screen views, and read feature flags with in-app defaults, from PHP. Works with Firebase. Without a Firebase config file the app keeps working: calls are skipped and your defaults are served.",
+    "namespace": "AppAnalytics",
+    "keywords": [
+        "analytics",
+        "remote-config",
+        "feature-flags",
+        "firebase",
+        "events",
+        "user-properties",
+        "screen-views",
+        "a-b-testing",
+        "consent-mode",
+        "experiments"
+    ],
+    "category": "analytics",
+    "license": "MIT",
+    "pricing": {
+        "type": "free"
+    },
+    "author": {
+        "name": "vipertecpro",
+        "email": "vipertecpro@gmail.com",
+        "url": "https://github.com/vipertecpro"
+    },
+    "homepage": "https://github.com/vipertecpro/app-analytics",
+    "repository": "https://github.com/vipertecpro/app-analytics",
+    "funding": [],
+    "platforms": [
+        "android",
+        "ios"
+    ],
+    "icon": "resources/icon.png",
+    "bridge_functions": [
+        {
+            "name": "AppAnalytics.Status",
+            "android": "com.vipertecpro.plugins.app_analytics.AppAnalyticsFunctions.Status",
+            "ios": "AppAnalyticsFunctions.Status",
+            "description": "Report whether Firebase is configured and analytics collection is on"
+        },
+        {
+            "name": "AppAnalytics.LogEvent",
+            "android": "com.vipertecpro.plugins.app_analytics.AppAnalyticsFunctions.LogEvent",
+            "ios": "AppAnalyticsFunctions.LogEvent",
+            "description": "Log an analytics event with parameters"
+        },
+        {
+            "name": "AppAnalytics.SetUserProperty",
+            "android": "com.vipertecpro.plugins.app_analytics.AppAnalyticsFunctions.SetUserProperty",
+            "ios": "AppAnalyticsFunctions.SetUserProperty",
+            "description": "Set or clear an analytics user property"
+        },
+        {
+            "name": "AppAnalytics.SetUserId",
+            "android": "com.vipertecpro.plugins.app_analytics.AppAnalyticsFunctions.SetUserId",
+            "ios": "AppAnalyticsFunctions.SetUserId",
+            "description": "Set or clear the analytics user id"
+        },
+        {
+            "name": "AppAnalytics.SetCollectionEnabled",
+            "android": "com.vipertecpro.plugins.app_analytics.AppAnalyticsFunctions.SetCollectionEnabled",
+            "ios": "AppAnalyticsFunctions.SetCollectionEnabled",
+            "description": "Turn analytics collection on or off"
+        },
+        {
+            "name": "AppAnalytics.SetConsent",
+            "android": "com.vipertecpro.plugins.app_analytics.AppAnalyticsFunctions.SetConsent",
+            "ios": "AppAnalyticsFunctions.SetConsent",
+            "description": "Set the Consent Mode v2 analytics/ad storage, ad user data and ad personalisation signals"
+        },
+        {
+            "name": "AppAnalytics.ResetData",
+            "android": "com.vipertecpro.plugins.app_analytics.AppAnalyticsFunctions.ResetData",
+            "ios": "AppAnalyticsFunctions.ResetData",
+            "description": "Clear all analytics data on this device"
+        },
+        {
+            "name": "AppAnalytics.FetchAndActivate",
+            "android": "com.vipertecpro.plugins.app_analytics.AppAnalyticsFunctions.FetchAndActivate",
+            "ios": "AppAnalyticsFunctions.FetchAndActivate",
+            "description": "Fetch Remote Config values and activate them; result via event"
+        },
+        {
+            "name": "AppAnalytics.GetValues",
+            "android": "com.vipertecpro.plugins.app_analytics.AppAnalyticsFunctions.GetValues",
+            "ios": "AppAnalyticsFunctions.GetValues",
+            "description": "Return every activated Remote Config value fetched from the server"
+        }
+    ],
+    "android": {
+        "min_version": 29,
+        "permissions": [
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        ],
+        "repositories": [],
+        "dependencies": {
+            "implementation": [
+                "com.google.firebase:firebase-analytics:22.1.2",
+                "com.google.firebase:firebase-config:22.0.1"
+            ]
+        },
+        "project_files": [
+            {
+                "sources": [
+                    "google-services.json"
+                ],
+                "destination": "app/src/main/assets/vipertecpro/google-services.json",
+                "required": false
+            }
+        ],
+        "activities": [],
+        "services": [],
+        "receivers": [],
+        "providers": []
+    },
+    "ios": {
+        "min_version": "15.0",
+        "info_plist": {},
+        "dependencies": {
+            "swift_packages": [],
+            "pods": [
+                {
+                    "name": "FirebaseAnalytics",
+                    "version": "~> 12.0"
+                },
+                {
+                    "name": "FirebaseRemoteConfig",
+                    "version": "~> 12.0"
+                }
+            ]
+        },
+        "project_files": [
+            {
+                "sources": [
+                    "GoogleService-Info.plist"
+                ],
+                "destination": "NativePHP/GoogleService-Info.plist",
+                "required": false
+            }
+        ],
+        "init_function": "initAppAnalytics"
+    },
+    "assets": {
+        "android": [],
+        "ios": []
+    },
+    "secrets": [],
+    "events": [
+        "Vipertecpro\\AppAnalytics\\Events\\RemoteConfigFetched",
+        "Vipertecpro\\AppAnalytics\\Events\\RemoteConfigFetchFailed"
+    ],
+    "service_provider": "Vipertecpro\\AppAnalytics\\AppAnalyticsServiceProvider",
+    "hooks": {}
+}

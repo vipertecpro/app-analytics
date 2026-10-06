@@ -1,0 +1,59 @@
+{
+    "name": "vipertecpro/app-analytics",
+    "description": "App Analytics & Remote Config for NativePHP: analytics events, user properties, screen views and feature flags with in-app defaults. Works with Firebase. Hand-written Swift and Kotlin.",
+    "type": "nativephp-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vipertecpro",
+            "email": "vipertecpro@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/vipertecpro/app-analytics",
+    "keywords": [
+        "nativephp",
+        "mobile",
+        "analytics",
+        "remote-config",
+        "feature-flags",
+        "firebase",
+        "events",
+        "a-b-testing"
+    ],
+    "require": {
+        "php": "^8.4",
+        "nativephp/mobile": "^4.0"
+    },
+    "suggest": {
+        "vipertecpro/consent": "Ask for consent first, then switch analytics collection on with Analytics::setConsent()."
+    },
+    "autoload": {
+        "psr-4": {
+            "Vipertecpro\\AppAnalytics\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vipertecpro\\AppAnalytics\\AppAnalyticsServiceProvider"
+            ]
+        },
+        "nativephp": {
+            "manifest": "nativephp.json"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.0|^4.0",
+        "laravel/framework": "^12.0|^13.0"
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

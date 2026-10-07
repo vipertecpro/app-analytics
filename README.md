@@ -216,7 +216,7 @@ A JS bridge is shipped at `resources/js/appAnalytics.js` with `logEvent()`,
   skipped without errors, validation errors shown, fetch reporting
   `not_configured`, defaults served, light and dark mode.
 - Android emulator, Pixel 9 (API 36): the same without a config file; then
-  with a test `google-services.json` (dummy project): Firebase initialised from
+  with a test `google-services.json` (test project): Firebase initialised from
   assets, status "configured", events accepted, and the fetch failing cleanly
   with `error` because the test key is not real.
 - Not verified: delivery to a real Firebase project and real Remote Config

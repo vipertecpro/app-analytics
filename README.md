@@ -12,15 +12,15 @@ It is built to fail safe: an app **without** a `google-services.json` /
 
 ## Features
 
-- 📊 **Events** — `Analytics::logEvent()` with up to 25 parameters, validated against the analytics limits before anything is sent
-- 🧭 **Screen views** — `Analytics::logScreenView()` for SuperNative screens, which have no automatic screen tracking
-- 🏷️ **User properties and user id** — set and clear them
-- 🛡️ **Consent Mode v2** — `Analytics::setConsent()` for analytics storage, ad storage, ad user data and ad personalisation, plus a collection switch
-- 🚩 **Feature flags** — `RemoteConfig::bool()`, `string()`, `int()`, `float()`, `json()` with your defaults, and where each value came from
-- 🔁 **Fetch and activate** — asynchronous, with `RemoteConfigFetched` / `RemoteConfigFetchFailed` events and an automatic cache refresh
-- 🧯 **Safe without a config file** — no crash, no build failure, defaults served
-- 🔌 **No Gradle plugin** — Firebase is initialised from your config file at runtime, so the build never depends on it
-- 📱 **iOS + Android** behind one PHP API
+- **Events** — `Analytics::logEvent()` with up to 25 parameters, validated against the analytics limits before anything is sent
+- **Screen views** — `Analytics::logScreenView()` for SuperNative screens, which have no automatic screen tracking
+- **User properties and user id** — set and clear them
+- **Consent Mode v2** — `Analytics::setConsent()` for analytics storage, ad storage, ad user data and ad personalisation, plus a collection switch
+- **Feature flags** — `RemoteConfig::bool()`, `string()`, `int()`, `float()`, `json()` with your defaults, and where each value came from
+- **Fetch and activate** — asynchronous, with `RemoteConfigFetched` / `RemoteConfigFetchFailed` events and an automatic cache refresh
+- **Safe without a config file** — no crash, no build failure, defaults served
+- **No Gradle plugin** — Firebase is initialised from your config file at runtime, so the build never depends on it
+- **iOS + Android** behind one PHP API
 
 ## Requirements
 
@@ -237,7 +237,7 @@ with the package for local setup, the project layout and how it works.
 
 See the `CHANGELOG.md` file included with the package for the full version history.
 
-## License
+## Licence
 
 MIT — see the `LICENSE` file included with the package.
 

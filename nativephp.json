@@ -1,7 +1,7 @@
 {
     "name": "vipertecpro/app-analytics",
     "version": "1.0.0",
-    "description": "App Analytics & Remote Config for NativePHP: log analytics events, user properties and screen views, and read feature flags with in-app defaults, from PHP. Works with Firebase. Without a Firebase config file the app keeps working: calls are skipped and your defaults are served.",
+    "description": "Log analytics events, user properties and screen views, and read feature flags with in-app defaults, from PHP. Works with Firebase. Without a Firebase config file the app keeps working: calls are skipped and your defaults are served.",
     "namespace": "AppAnalytics",
     "keywords": [
         "analytics",

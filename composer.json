@@ -1,6 +1,6 @@
 {
     "name": "vipertecpro/app-analytics",
-    "description": "App Analytics & Remote Config for NativePHP: analytics events, user properties, screen views and feature flags with in-app defaults. Works with Firebase. Hand-written Swift and Kotlin.",
+    "description": "Analytics events, user properties, screen views and feature flags with in-app defaults. Works with Firebase. Hand-written Swift and Kotlin.",
     "type": "nativephp-plugin",
     "license": "MIT",
     "authors": [

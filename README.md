@@ -195,6 +195,48 @@ logs itself (`first_open`, `session_start`, …); string values are limited to
 A JS bridge is shipped at `resources/js/appAnalytics.js` with `logEvent()`,
 `logScreenView()`, `status()` and `fetchAndActivate()`.
 
+## What you can build
+
+App Analytics & Remote Config is a building block: events, screen views and
+feature flags are done, and the product around them is yours. These ideas sit
+comfortably inside store policy as long as you tell people what you measure,
+ask for consent where the law requires it, and never put personal data such as
+an email address or phone number into an event or a user id. Real data needs
+your own Firebase project and its config files.
+
+**Shops and subscriptions**
+
+- **Checkout funnels for shopping apps.** Log `product_viewed`, `added_to_cart`
+  and `purchase_started` events with `logEvent()`, then see where people drop
+  off in your Firebase reports.
+- **Gradual rollouts of a new checkout.** Ship the new flow behind
+  `RemoteConfig::bool('new_checkout')`, turn it on for a share of users from the
+  Firebase console, and switch it off again without a release.
+- **Seasonal banners and offers.** Read the banner title and sale text with
+  `RemoteConfig::string()`, so a promotion starts and ends without an app update.
+
+**Content and media**
+
+- **Reading and listening apps.** Use `logScreenView()` for every SuperNative
+  screen and events such as `article_finished` to learn which topics people
+  finish.
+- **Feature-limit tuning.** Keep numbers such as free downloads per week in
+  `RemoteConfig::int()` and adjust them as you learn how the app is used.
+
+**Internal and field apps**
+
+- **Staged feature releases for a team app.** Turn a new screen on for staff first
+  with a flag, then for everyone, with the in-app default as the safe fallback.
+- **Kill switches.** Wrap a risky feature in a flag so you can turn it off for
+  everyone if something goes wrong.
+
+Analytics only collects what you log. Pair it with a consent screen
+(`Analytics::setConsent()` and `setCollectionEnabled()`) before collecting
+where required, and describe the collection in your privacy policy and in the
+store's data-safety and privacy-label forms. Dashboards beyond the Firebase
+console, or sending data to your own server, need your own backend. Remote
+Config changes are cached and throttled, so they are not instant.
+
 ## Limitations
 
 - **No automatic screen tracking** for SuperNative screens — call

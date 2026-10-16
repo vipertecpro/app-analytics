@@ -1,5 +1,7 @@
 # App Analytics & Remote Config for NativePHP — works with Firebase
 
+![Latest version](https://img.shields.io/packagist/v/vipertecpro/app-analytics) ![Tests](https://img.shields.io/github/actions/workflow/status/vipertecpro/app-analytics/tests.yml?branch=main&label=tests) ![PHP](https://img.shields.io/packagist/dependency-v/vipertecpro/app-analytics/php) ![NativePHP Mobile](https://img.shields.io/packagist/dependency-v/vipertecpro/app-analytics/nativephp%2Fmobile) ![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20Android-informational) ![Licence](https://img.shields.io/packagist/l/vipertecpro/app-analytics) ![Downloads](https://img.shields.io/packagist/dt/vipertecpro/app-analytics)
+
 Measure how your NativePHP Mobile app is used and change its behaviour without
 a release. This plugin gives you one PHP API for **analytics events, user
 properties and screen views** and for **Remote Config feature flags with
